@@ -1,0 +1,319 @@
+.profile-page {
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
+    background: var(--color-bg-primary);
+}
+
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Profile Header */
+.profile-header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.profile-avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--color-accent-primary);
+    box-shadow: 0 0 30px hsla(265, 85%, 65%, 0.3);
+}
+
+.profile-avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-email {
+    color: var(--color-text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.profile-joined {
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
+}
+
+.profile-stats-summary {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.summary-stat {
+    text-align: center;
+}
+
+.summary-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.summary-label {
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.summary-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Stats Section */
+.stats-section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.stats-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.detailed-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.detailed-stat-card {
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    position: relative;
+}
+
+.stat-circle::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, currentColor, transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.stat-circle.easy {
+    background: hsla(145, 70%, 55%, 0.1);
+    color: var(--color-easy);
+}
+
+.stat-circle.medium {
+    background: hsla(40, 95%, 60%, 0.1);
+    color: var(--color-medium);
+}
+
+.stat-circle.hard {
+    background: hsla(0, 85%, 65%, 0.1);
+    color: var(--color-hard);
+}
+
+.stat-circle.streak {
+    background: hsla(265, 85%, 65%, 0.1);
+    color: var(--color-accent-primary);
+}
+
+.circle-number {
+    position: relative;
+    z-index: 1;
+}
+
+.detailed-stat-card h3 {
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.detailed-stat-card p {
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
+    margin: 0;
+}
+
+/* Achievements */
+.achievements-section {
+    animation: fadeIn 0.7s ease-out;
+}
+
+.achievements-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    transition: all var(--transition-base);
+}
+
+.achievement-card.locked {
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+.achievement-card.unlocked {
+    animation: pulse 2s infinite;
+}
+
+.achievement-icon {
+    font-size: 3rem;
+}
+
+.achievement-card h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.achievement-card p {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+    margin: 0;
+}
+
+.achievement-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-easy);
+    color: var(--color-bg-primary);
+    border-radius: 9999px;
+    font-size: 0.625rem;
+    font-weight: 700;
+}
+
+/* Activity Summary */
+.activity-summary {
+    padding: 2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.activity-summary h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.activity-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+}
+
+.activity-label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.activity-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-page {
+        padding: 1rem;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .profile-avatar-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-stats-summary {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .summary-divider {
+        height: 40px;
+    }
+
+    .detailed-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .activity-stats {
+        grid-template-columns: 1fr;
+    }
+}
