@@ -9,9 +9,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: FIREBASE_PROJECT_ID
-        fromConfig: firebase_project_id
+        sync: false
       - key: CLIENT_URL
-        fromConfig: client_url
+        sync: false
     rootDir: server
 
   - type: web
@@ -19,19 +19,19 @@ services:
     env: static
     plan: free
     buildCommand: npm install && npm run build
-    staticPublishDir: dist
+    publishDir: dist
     envVars:
       - key: VITE_API_URL
         fromConfig: dsasolver-api/url
       - key: VITE_FIREBASE_API_KEY
-        fromConfig: firebase_api_key
+        sync: false
       - key: VITE_FIREBASE_AUTH_DOMAIN
-        fromConfig: firebase_auth_domain
+        sync: false
       - key: VITE_FIREBASE_PROJECT_ID
-        fromConfig: firebase_project_id
+        sync: false
       - key: VITE_FIREBASE_STORAGE_BUCKET
-        fromConfig: firebase_storage_bucket
+        sync: false
       - key: VITE_FIREBASE_MESSAGING_SENDER_ID
-        fromConfig: firebase_messaging_sender_id
+        sync: false
       - key: VITE_FIREBASE_APP_ID
-        fromConfig: firebase_app_id
+        sync: false
