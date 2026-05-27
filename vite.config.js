@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
+server: {
+  allowedHosts: ['dsasolver-2.onrender.com']
+}
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
