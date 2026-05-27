@@ -5,5 +5,7 @@ server: {
 }
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react()],server: {
+  allowedHosts: ['dsasolver-2.onrender.com']
+}
 })
